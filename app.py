@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def hello_world():
-    return 'hello world'
+    return 'hello world, 1'
 
 
 @app.route('/github', methods=['POST'])
