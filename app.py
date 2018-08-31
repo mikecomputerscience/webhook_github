@@ -15,9 +15,10 @@ def hello_world():
 def api_gh_message():
     if request.headers['Content-Type'] == 'application/json':
         info_dict = request.json
+        author_name = info_dict['commits'][0]['author']['name']
         info_str = json.dumps(request.json)
         print('*****start*****')
-        print(info_dict['commits'][0]['author']['name'])
+        print(author_name)
         print(info_str)
         print('------end------')
         return info_str
