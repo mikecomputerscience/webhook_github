@@ -14,14 +14,14 @@ def hello_world():
 @app.route('/github', methods=['POST'])
 def api_gh_message():
     if request.headers['Content-Type'] == 'application/json':
-        info_dict = request.json
-        author_name = info_dict['commits'][0]['author']['name']
-        info_str = json.dumps(request.json)
+        request_dict = request.json
+        author_name = request_dict['commits'][0]['author']['name']
+        request_str = json.dumps(request_dict)
         print('*****start*****')
         print(author_name)
-        print(info_str)
+        # print(request_str)
         print('------end------')
-        return info_str
+        return request_str
 
 
 if __name__ == '__main__':
