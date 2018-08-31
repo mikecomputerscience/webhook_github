@@ -15,7 +15,9 @@ def hello_world():
 def api_gh_message():
     if request.headers['Content-Type'] == 'application/json':
         github_info = json.dumps(request.json)
+        print('*****start*****')
         print(github_info)
+        print('------end------')
         return github_info
 
 
